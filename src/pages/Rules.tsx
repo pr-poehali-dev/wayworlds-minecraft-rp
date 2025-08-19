@@ -20,9 +20,11 @@ const Rules = () => {
             <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Главная</Link>
             <Link to="/rules" className="text-foreground font-medium">Правила</Link>
             <Link to="/donate" className="text-muted-foreground hover:text-foreground transition-colors">Донат</Link>
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Icon name="Users" size={20} className="mr-2" />
-              Сообщество
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+              <a href="https://t.me/WayWorlds_Info" target="_blank" rel="noopener noreferrer">
+                <Icon name="Send" size={20} className="mr-2" />
+                Телеграм
+              </a>
             </Button>
           </div>
         </div>
@@ -42,19 +44,23 @@ const Rules = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
+            <Card className="mb-12">
+              <CardHeader>
+                <CardTitle className="flex items-center text-2xl">
+                  <Icon name="BookOpen" size={24} className="mr-3 text-primary" />
+                  Правила сервера
+                </CardTitle>
+                <CardDescription className="text-lg">
+                  Обязательные к соблюдению правила для комфортной игры
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-8">
+                <div>
+                  <h3 className="text-lg font-semibold mb-4 flex items-center">
                     <Icon name="Shield" size={20} className="mr-2 text-primary" />
                     Основные правила
-                  </CardTitle>
-                  <CardDescription>
-                    Базовые принципы поведения на сервере
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-4 text-muted-foreground">
+                  </h3>
+                  <ul className="space-y-3 text-muted-foreground ml-6">
                     <li className="flex items-start">
                       <Icon name="Check" size={16} className="mr-3 mt-1 text-primary flex-shrink-0" />
                       <div>
@@ -80,21 +86,16 @@ const Rules = () => {
                       </div>
                     </li>
                   </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
+                </div>
+                
+                <Separator />
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-4 flex items-center">
                     <Icon name="Heart" size={20} className="mr-2 text-primary" />
                     Ролевые правила
-                  </CardTitle>
-                  <CardDescription>
-                    Принципы ролевой игры на WayWorlds
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-4 text-muted-foreground">
+                  </h3>
+                  <ul className="space-y-3 text-muted-foreground ml-6">
                     <li className="flex items-start">
                       <Icon name="Check" size={16} className="mr-3 mt-1 text-primary flex-shrink-0" />
                       <div>
@@ -120,9 +121,9 @@ const Rules = () => {
                       </div>
                     </li>
                   </ul>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+              </CardContent>
+            </Card>
 
             <Card className="mb-12">
               <CardHeader>
@@ -184,21 +185,37 @@ const Rules = () => {
                     обращайся к администрации через следующие каналы:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-3">
-                      <Icon name="MessageSquare" size={20} className="text-primary" />
-                      <span>Discord: WayWorlds</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Icon name="Users" size={20} className="text-primary" />
-                      <span>VK: @wayworlds</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
+                    <Button variant="outline" className="justify-start h-auto p-4" asChild>
+                      <a href="https://discord.gg/wayworlds" target="_blank" rel="noopener noreferrer">
+                        <Icon name="MessageSquare" size={20} className="text-primary mr-3" />
+                        <div className="text-left">
+                          <div className="font-medium">Discord</div>
+                          <div className="text-sm text-muted-foreground">WayWorlds</div>
+                        </div>
+                      </a>
+                    </Button>
+                    <Button variant="outline" className="justify-start h-auto p-4" asChild>
+                      <a href="https://t.me/WayWorlds_Info" target="_blank" rel="noopener noreferrer">
+                        <Icon name="Send" size={20} className="text-primary mr-3" />
+                        <div className="text-left">
+                          <div className="font-medium">Telegram</div>
+                          <div className="text-sm text-muted-foreground">@WayWorlds_Info</div>
+                        </div>
+                      </a>
+                    </Button>
+                    <div className="flex items-center space-x-3 p-4 bg-muted/50 rounded-lg">
                       <Icon name="Mail" size={20} className="text-primary" />
-                      <span>Email: admin@wayworlds.ru</span>
+                      <div>
+                        <div className="font-medium">Email</div>
+                        <div className="text-sm text-muted-foreground">admin@wayworlds.ru</div>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3 p-4 bg-muted/50 rounded-lg">
                       <Icon name="Terminal" size={20} className="text-primary" />
-                      <span>Игра: команда /report</span>
+                      <div>
+                        <div className="font-medium">В игре</div>
+                        <div className="text-sm text-muted-foreground">команда /report</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -216,7 +233,7 @@ const Rules = () => {
             Ознакомился с правилами? Тогда пора окунуться в мир WayWorlds!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => document.getElementById('start')?.scrollIntoView({ behavior: 'smooth' })}>
               <Icon name="Play" size={20} className="mr-2" />
               Начать играть
             </Button>
@@ -242,7 +259,10 @@ const Rules = () => {
                 <h3 className="text-xl font-bold">WayWorlds</h3>
               </Link>
               <p className="text-secondary-foreground/80">
-                Современный ролплей сервер Minecraft с уникальным миром будущего
+                Уникальный проект на уровне GTA 5 и SAMP
+              </p>
+              <p className="text-xs text-secondary-foreground/60 mt-2">
+                Мы не связаны с Mojang AB или Microsoft
               </p>
             </div>
             <div>
@@ -258,13 +278,13 @@ const Rules = () => {
               <ul className="space-y-2 text-secondary-foreground/80">
                 <li>IP: play.wayworlds.ru</li>
                 <li>Discord: WayWorlds</li>
-                <li>VK: @wayworlds</li>
+                <li>Telegram: @WayWorlds_Info</li>
               </ul>
             </div>
           </div>
           <Separator className="my-8 bg-secondary-foreground/20" />
           <div className="text-center text-secondary-foreground/60">
-            <p>&copy; 2024 WayWorlds. Все права защищены.</p>
+            <p>&copy; 2025 WayWorlds. Все права защищены.</p>
           </div>
         </div>
       </footer>

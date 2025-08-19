@@ -21,9 +21,11 @@ const Donate = () => {
             <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Главная</Link>
             <Link to="/rules" className="text-muted-foreground hover:text-foreground transition-colors">Правила</Link>
             <Link to="/donate" className="text-foreground font-medium">Донат</Link>
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Icon name="Users" size={20} className="mr-2" />
-              Сообщество
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+              <a href="https://t.me/WayWorlds_Info" target="_blank" rel="noopener noreferrer">
+                <Icon name="Send" size={20} className="mr-2" />
+                Телеграм
+              </a>
             </Button>
           </div>
         </div>
@@ -352,7 +354,10 @@ const Donate = () => {
                 <h3 className="text-xl font-bold">WayWorlds</h3>
               </Link>
               <p className="text-secondary-foreground/80">
-                Современный ролплей сервер Minecraft с уникальным миром будущего
+                Уникальный проект на уровне GTA 5 и SAMP
+              </p>
+              <p className="text-xs text-secondary-foreground/60 mt-2">
+                Мы не связаны с Mojang AB или Microsoft
               </p>
             </div>
             <div>
@@ -368,13 +373,13 @@ const Donate = () => {
               <ul className="space-y-2 text-secondary-foreground/80">
                 <li>IP: play.wayworlds.ru</li>
                 <li>Discord: WayWorlds</li>
-                <li>VK: @wayworlds</li>
+                <li>Telegram: @WayWorlds_Info</li>
               </ul>
             </div>
           </div>
           <Separator className="my-8 bg-secondary-foreground/20" />
           <div className="text-center text-secondary-foreground/60">
-            <p>&copy; 2024 WayWorlds. Все права защищены.</p>
+            <p>&copy; 2025 WayWorlds. Все права защищены.</p>
           </div>
         </div>
       </footer>

@@ -21,9 +21,11 @@ const Index = () => {
             <a href="#start" className="text-muted-foreground hover:text-foreground transition-colors">Как начать</a>
             <Link to="/rules" className="text-muted-foreground hover:text-foreground transition-colors">Правила</Link>
             <Link to="/donate" className="text-muted-foreground hover:text-foreground transition-colors">Донат</Link>
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Icon name="Users" size={20} className="mr-2" />
-              Сообщество
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+              <a href="https://t.me/WayWorlds_Info" target="_blank" rel="noopener noreferrer">
+                <Icon name="Send" size={20} className="mr-2" />
+                Телеграм
+              </a>
             </Button>
           </div>
         </div>
@@ -48,13 +50,15 @@ const Index = () => {
                 Участвуй в перестрелках, стань представителем закона или создай собственную ОПГ!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => document.getElementById('start')?.scrollIntoView({ behavior: 'smooth' })}>
                   <Icon name="Play" size={20} className="mr-2" />
                   Начать играть
                 </Button>
-                <Button variant="outline" size="lg">
-                  <Icon name="Users" size={20} className="mr-2" />
-                  Сообщество
+                <Button variant="outline" size="lg" asChild>
+                  <a href="https://t.me/WayWorlds_Info" target="_blank" rel="noopener noreferrer">
+                    <Icon name="Send" size={20} className="mr-2" />
+                    Телеграм
+                  </a>
                 </Button>
               </div>
             </div>
@@ -70,13 +74,48 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Info Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Icon name="Download" size={24} className="text-primary" />
+                </div>
+                <CardTitle>Никаких модов не нужно</CardTitle>
+                <CardDescription>
+                  Для игры на сервере не требуется устанавливать моды. По желанию можно установить 
+                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">
+                    Plasmo Voice
+                  </a> для голосового чата
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Icon name="Trophy" size={24} className="text-primary" />
+                </div>
+                <CardTitle>Уровень GTA 5 RP и SAMP</CardTitle>
+                <CardDescription>
+                  WayWorlds — это уникальный проект, который достиг качества и глубины ролевой игры на уровне 
+                  легендарных серверов GTA 5 RP и San Andreas Multiplayer
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Уникальные возможности</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Нет, это не рандомный набор слов — это о WayWorlds! Открой для себя мир бесконечных возможностей
+              Открой для себя мир бесконечных возможностей
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -170,7 +209,7 @@ const Index = () => {
                 </div>
                 <CardTitle>Скачай Minecraft</CardTitle>
                 <CardDescription>
-                  Убедись, что у тебя установлена лицензионная версия Minecraft Java Edition
+                  Установи Minecraft Java Edition версии 1.21.4. Лицензия не обязательна
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -214,7 +253,10 @@ const Index = () => {
                 <h3 className="text-xl font-bold">WayWorlds</h3>
               </Link>
               <p className="text-secondary-foreground/80">
-                Современный ролплей сервер Minecraft с уникальным миром будущего
+                Уникальный проект на уровне GTA 5 и SAMP
+              </p>
+              <p className="text-xs text-secondary-foreground/60 mt-2">
+                Мы не связаны с Mojang AB или Microsoft
               </p>
             </div>
             <div>
@@ -230,13 +272,13 @@ const Index = () => {
               <ul className="space-y-2 text-secondary-foreground/80">
                 <li>IP: play.wayworlds.ru</li>
                 <li>Discord: WayWorlds</li>
-                <li>VK: @wayworlds</li>
+                <li>Telegram: @WayWorlds_Info</li>
               </ul>
             </div>
           </div>
           <Separator className="my-8 bg-secondary-foreground/20" />
           <div className="text-center text-secondary-foreground/60">
-            <p>&copy; 2024 WayWorlds. Все права защищены.</p>
+            <p>&copy; 2025 WayWorlds. Все права защищены.</p>
           </div>
         </div>
       </footer>
